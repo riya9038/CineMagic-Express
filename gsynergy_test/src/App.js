@@ -4,7 +4,7 @@ import { MovieContainer } from "./components/MovieContainer";
 
 function App() {
   return (
-    <div className="App">
+    <div className="w-full h-full text-black rounded-10">
       <Header />
       <Outlet />
     </div>

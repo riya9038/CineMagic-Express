@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MovieContainer } from "./components/MovieContainer";
 import { Provider } from "react-redux";
 import appStore from "./store/store";
+import { MovieDetail } from "./components/MovieDetail";
 
 const router = createBrowserRouter([
   {
@@ -22,8 +23,8 @@ const router = createBrowserRouter([
         element: <MovieContainer />,
       },
       {
-        path: "/detail:id",
-        element: <div>MOvie DETAIL</div>,
+        path: "/detail/:id",
+        element: <MovieDetail />,
       },
     ],
   },
