@@ -42,7 +42,7 @@ export const Header = () => {
   }, [text]);
 
   return (
-    <div className="h-24 p-5 flex justify-between items-center rounded-10 bg-cyan-400 shadow-xl shadow-slate-600">
+    <div className="h-24 w-full p-5 flex justify-between items-center rounded-10 bg-cyan-400 shadow-xl shadow-slate-600 header sticky top-0 z-50">
       <Link to="/">
         <div
           className="logo w-16 h-16 flex items-center shadow-4xl shadow-slate-800"
@@ -54,10 +54,10 @@ export const Header = () => {
           />
         </div>
       </Link>
-      <div className="flex relative">
-        <SearchIcon className="absolute top-2.5 left-2" />
+      <div className="flex relative w-96 search-bar">
+        <SearchIcon className="absolute top-2.5 left-2 search-icon" />
         <input
-          className="rounded-xl h-4 w-96 flex items-center p-5 px-10 shadow-gray-600 shadow-md"
+          className="rounded-xl h-4 w-full flex items-center p-5 px-10 shadow-gray-600 shadow-md input-box"
           type="search"
           value={text}
           placeholder="Search"
@@ -65,13 +65,13 @@ export const Header = () => {
         />
       </div>
 
-      <div className="flex items-center justify-between gap-10 text-lg mr-20 w-50%">
+      <div className="flex items-center justify-between gap-10 text-lg mr-20 w-50% header-list">
         <Link to="/">
           <p
             className="flex items-center gap-2"
             onClick={() => handleChangeType("all")}
           >
-            <HomeIcon /> Home
+            <HomeIcon /> <span>Home</span>
           </p>
         </Link>
         <p
@@ -79,14 +79,14 @@ export const Header = () => {
           onClick={() => handleChangeType("tv")}
         >
           <LiveTvIcon />
-          TV Shows
+          <span>TV Shows</span>
         </p>
         <p
           className="flex items-center gap-2 cursor-pointer"
           onClick={() => handleChangeType("movie")}
         >
           <MovieIcon />
-          Movies
+          <span> Movies</span>
         </p>
         <p className="cursor-pointer">
           <AccountCircleIcon className="scale-150" />

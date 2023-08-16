@@ -1,23 +1,17 @@
-# Getting Started with Create React App
+# Project Name
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Movie Central
 
-## Available Scripts
-
-In the project directory, you can run:
+# Available Scripts
 
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Open [http://localhost:3000] to view it in your browser.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode. To use Jest for unit testing,
 
 ### `npm run build`
 
@@ -25,46 +19,74 @@ Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+My app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Features
 
-### `npm run eject`
+Movies App created from scratch using create-react-app
+Well responsive and structured website compatible for all devices
+Maintained an organised folder structure to store components
+Used Redux Toolkit for State Management
+Integrated TMDB Api to fetch data
+Added Tailwind CSS for styling
+For smooth user experience, implemented infinite scrolling to show data list
+Added debouncing for search functionality
+Routing using latest version of React Router DOM
+Added loading screens using Shimmer UI
+Handled errors using Error Components
+Integrated React Testing Library for Unit Testing
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Redux Toolkit
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm install @reduxjs/toolkit library
+create a separate folder for redux store, slices, reducers, actions
+inside store, configure the store and add reducers to it
+created movieSlice to add all the actions and associated reducers
+used createAsyncThunk from redux toolkit to handle async operations
+added actions inside reducers
+added cases for async operations states(pending, fulfilled, rejected) inside extraReducers
+export actions and slices (important)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Infinite Scrolling
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+npm install react-infinite-scroll-component
+added the boilerplate code inside the component
+created corresponding next function that makes a next api call to fetch subsequent list of data
+added appropriate condition inside hasMore according to use case
+infinite scroll is ready!!
 
-## Learn More
+# Routing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+npm install react-router-dom
+destructured createBrowserRouter and RouteProvider from the library
+added paths and corresponding elements inside the createBrowserRoute array
+addded children and error elements
+Used Links to navigate between different screens
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Debouncing
 
-### Code Splitting
+Added setTimeout to dispatch action that fetches content based on search text
+Added a delay of 500ms
+Cleared timeout(component unmounting) inside useEffect
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Tailwind Css
 
-### Analyzing the Bundle Size
+npm install tailwindcss
+Configured tailwind.config.js
+Added postcssrc
+Changed VS Code settings to read tailwind css
+Used tailwind intellisense extension for suggestions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Unit Testing
 
-### Making a Progressive Web App
+npm install @testing-library/react and @testing-library/jest-dom
+Added test cases inside App.test.js
+npm run test to check
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Challenges
 
-### Advanced Configuration
+Implementing Infinite Scroll with Tailwind CSS was an incredibly engaging and enjoyable experience for me. It was a new concept that allowed me to delve into a new skillset. Despite having more straightforward choices like pagination and using libraries such as Mui or Bootstrap, I intentionally chose to tackle Infinite Scroll with Tailwind CSS in order to expand my knowledge.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Throughout the implementation, I faced challenges and made continuous improvements to my approach. While the final UI might not be flawless, especially considering my status as a beginner, I'm proud of my efforts and the progress I've made. I consider this experience a significant achievement, showcasing my willingness to explore and learn new techniques in the world of web development.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Given more time, I would have surely worked upon improving the UI and add more advanced features like filter, authentication, animations to make it more functional.

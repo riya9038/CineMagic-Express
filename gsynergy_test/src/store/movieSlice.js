@@ -38,6 +38,7 @@ export const movieSlice = createSlice({
     searchText: "",
     total_pages: 0,
     type: "all",
+    pageNumber: 0,
     movieList: [],
     error: null,
   },
@@ -51,6 +52,9 @@ export const movieSlice = createSlice({
     changeType: (state, action) => {
       state.type = action.payload;
     },
+    changePageNumber: (state, action) => {
+      state.pageNumber = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchContent.pending, (state) => {
@@ -58,7 +62,10 @@ export const movieSlice = createSlice({
     });
     builder.addCase(fetchContent.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.movieList = [...state.movieList, ...action.payload.results];
+      if (state.pageNumber != action.payload.page) {
+        state.movieList = [...state.movieList, ...action.payload.results];
+        state.pageNumber = action.payload.page;
+      }
       state.total_pages = action.payload.total_pages;
     });
     builder.addCase(fetchContent.rejected, (state, action) => {
@@ -81,6 +88,7 @@ export const movieSlice = createSlice({
   },
 });
 
-export const { handleSearchText, clearList, changeType } = movieSlice.actions;
+export const { handleSearchText, clearList, changeType, changePageNumber } =
+  movieSlice.actions;
 
 export default movieSlice.reducer;

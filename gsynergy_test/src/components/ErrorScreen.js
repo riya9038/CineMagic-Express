@@ -1,10 +1,10 @@
 export const ErrorScreen = () => {
   return (
     <div className="w-full h-96 flex justify-center items-center">
-      <h1 className="text-3xl">
-        {" "}
-        Oops!! Error loading the page...Please try again later{" "}
-      </h1>
+      <img
+        src="https://cdn.dribbble.com/users/1844010/screenshots/5112840/demo_3.gif"
+        alt="Page Not Found"
+      />
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { MovieCard } from "./MovieCard";
-import { api_key } from "../utils/constants";
 import { Link } from "react-router-dom";
 import { fetchContent, fetchSearchText } from "../store/movieSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,6 +11,7 @@ export const MovieContainer = () => {
   const searchText = useSelector((state) => state.movies.searchText);
   const total_pages = useSelector((state) => state.movies.total_pages);
   const type = useSelector((state) => state.movies.type);
+
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
 
@@ -28,11 +28,11 @@ export const MovieContainer = () => {
   };
 
   return moviesList?.length === 0 ? (
-    <Shimmer />
+    <Shimmer parent="container" />
   ) : (
-    <div className="flex flex-wrap p-5 items-center bg-black">
+    <div className="flex flex-wrap p-5 items-center bg-black" role="container">
       <InfiniteScroll
-        className="flex flex-wrap gap-8 justify-between"
+        className="flex flex-wrap gap-8 justify-between infinite-scroll-container"
         dataLength={moviesList.length}
         hasMore={page < total_pages}
         next={handleFetchMore}

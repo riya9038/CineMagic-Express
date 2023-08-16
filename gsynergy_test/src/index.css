@@ -2,103 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .App {
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  color: black;
-  border-radius: 10px;
+/* @media screen and (max-width: 1120px) {
+  .detail-container {
+    font-size: small !important;
+    overflow: hidden;
+  }
+  .movie-poster {
+    height: 50%;
+  }
+  .detail-container h1,
+  h2 {
+    font-size: 1rem !important;
+  }
 }
-.header {
-  height: 50px;
-  box-shadow: 1px 2px 2px grey;
-  background-color: aqua;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 10px;
+@media screen and (max-width: 1050px) {
+  .header-list {
+    font-size: 14px;
+    margin-right: 0;
+  }
+  .detail-container h2 {
+    margin-bottom: 4px;
+  }
 }
-input {
-  border-radius: 20px;
-  height: 80%;
-  width: 30%;
-  display: flex;
-  align-items: center;
-  padding: 5px;
+@media screen and (max-width: 900px) {
+  .search-bar {
+    width: 30%;
+  }
+  .header-list {
+    font-size: 14px;
+    margin-right: 0;
+    gap: 15px;
+  }
 }
-.header-list {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  font-size: large;
-  margin-right: 20px;
-  width: 50%;
+@media screen and (max-width: 750px) {
+  .search-bar {
+    width: 30%;
+  }
+  .header-list {
+    font-size: 14px;
+    margin-right: 0;
+    gap: 15px;
+  }
+  .infinite-scroll-container {
+    gap: 55px;
+    justify-content: center;
+  }
+  .detail-container {
+    flex-direction: column;
+    overflow: auto !important;
+  }
+  .detail-container::-webkit-scrollbar {
+    display: none;
+  }
+  .movie-description {
+    text-align: center;
+    width: 100%;
+  }
+  .movie-info {
+    display: flex;
+    justify-content: center;
+  }
+  .movie-genres {
+    justify-content: center;
+  }
+  .movie-poster {
+    height: 24rem;
+    width: 20rem;
+  }
+  .detail-container h1,
+  h2 {
+    font-size: 2.75rem !important;
+    margin-bottom: 24px !important;
+  }
 }
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px 50px;
-  padding: 20px;
-  align-items: center;
-}
-.movie-card {
-  width: 200px;
-  height: 250px;
-  border-radius: 6px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  box-shadow: 4px 8px 5px gray;
-}
-.image-container {
-  width: 90%;
-  height: 60%;
-  border-radius: 6px;
-  margin-top: 10px;
-  box-shadow: -0.5px 8px 15px black;
-}
-.image-container img {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  border-radius: 6px;
-}
-.movie-info {
-  height: 30%;
-  width: 95%;
-  background-color: aqua;
-  color: black;
-  text-decoration: none;
-  display: flex;
-  justify-content: space-between;
-  padding: 5px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-.movie-title {
-  overflow: hidden;
-}
-.movie-title p {
-  margin: 0;
-}
-.movie-title :last-child {
-  font-size: 10px;
-  text-overflow: ellipsis;
-}
-.movie-rating {
-  display: flex;
-  align-items: flex-start;
-}
-.movie-rating p {
-  margin: 0;
-}
-.movie-detail {
-  display: flex;
-}
-.movie-desc {
-  color: white;
+@media screen and (max-width: 650px) {
+  .search-bar {
+    width: 30%;
+  }
+  .header-list {
+    font-size: 14px;
+    margin-right: 0;
+    gap: 25px;
+  }
+  .header-list span {
+    display: none;
+  }
 } */

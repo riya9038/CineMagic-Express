@@ -5,18 +5,20 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MovieContainer } from "./components/MovieContainer";
 import { Provider } from "react-redux";
-import appStore from "./store/store";
+import appStore from "./store/appStore";
 import { MovieDetail } from "./components/MovieDetail";
 import { ErrorScreen } from "./components/ErrorScreen";
+
+export const MainApp = (
+  <Provider store={appStore}>
+    <App />
+  </Provider>
+);
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <Provider store={appStore}>
-        <App />
-      </Provider>
-    ),
+    element: MainApp,
     errorElement: <ErrorScreen />,
     children: [
       {

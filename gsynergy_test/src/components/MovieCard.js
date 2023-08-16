@@ -4,7 +4,7 @@ import GradeIcon from "@mui/icons-material/Grade";
 export const MovieCard = ({ data }) => {
   return (
     <div className="w-52 h-80 rounded-md bg-white flex flex-col items-center justify-between cursor-pointer shadow-md shadow-gray-600 p-2.5">
-      <div className="w-full h-56 rounded-t-md">
+      <div className="w-full h-56 rounded-t-md bg-center overflow-hidden">
         <img
           src={
             data?.backdrop_path
@@ -16,7 +16,7 @@ export const MovieCard = ({ data }) => {
         />
       </div>
       <div className="h-24 w-full text-black text-decoration-none flex justify-between p-2 font-sans bg-slate-300 shadow-md shadow-slate-500">
-        <div className="overflow-hidden">
+        <div className="overflow-hidden w-full">
           <div className="flex justify-between items-start">
             <p className="m-0 text-md font-medium w-3/4">
               {data?.original_title || data?.name}

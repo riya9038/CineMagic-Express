@@ -3,7 +3,11 @@ import { Header } from "./components/Header";
 
 function App() {
   return (
-    <div className="w-full h-full text-black rounded-10 m-auto">
+    <div
+      className="w-full h-screen text-black rounded-10 m-auto "
+      style={{ minWidth: "512px" }}
+      data-testid="app"
+    >
       <Header />
       <Outlet />
     </div>
