@@ -1,25 +1,24 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { api_key, img_300 } from "../utils/constants";
+import { API_BASE_URL, api_key, img_300 } from "../utils/constants";
+import { Shimmer } from "./Shimmer";
+import { LoaderScreen } from "./LoaderScreen";
 
 export const MovieDetail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState({});
+
   useEffect(() => {
     fetchDetail();
   }, []);
+
   const fetchDetail = async () => {
-    const data = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}`
-    );
-    const dataJ = await data.json();
-    console.log(dataJ, "DATA");
-    setMovie(dataJ);
+    const data = await fetch(`${API_BASE_URL}/movie/${id}?api_key=${api_key}`);
+    const dataJson = await data.json();
+    setMovie(dataJson);
   };
   return Object.keys(movie).length === 0 ? (
-    <div>
-      <h1>Loading...</h1>
-    </div>
+    <LoaderScreen />
   ) : (
     <div className="bg-black flex p-16 w-full gap-10">
       <div className="w-1/4 h-108 shadow-2xl shadow-zinc-500 rounded-md">

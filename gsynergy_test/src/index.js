@@ -7,6 +7,7 @@ import { MovieContainer } from "./components/MovieContainer";
 import { Provider } from "react-redux";
 import appStore from "./store/store";
 import { MovieDetail } from "./components/MovieDetail";
+import { ErrorScreen } from "./components/ErrorScreen";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
         <App />
       </Provider>
     ),
-    errorElement: <div>Error</div>,
+    errorElement: <ErrorScreen />,
     children: [
       {
         path: "/",

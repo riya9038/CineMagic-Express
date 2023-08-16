@@ -1,41 +1,33 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { api_key } from "../utils/constants";
+import { API_BASE_URL, api_key } from "../utils/constants";
 
 export const fetchContent = createAsyncThunk(
   "movies/fetchContent",
-  async (page) => {
-    console.log(page, "page content");
-
+  async ({ page, type }) => {
     const moviesData = await fetch(
-      `https://api.themoviedb.org/3/trending/all/day?api_key=${api_key}&page=${page}`
+      `${API_BASE_URL}/trending/${type}/day?api_key=${api_key}&page=${page}`
     );
-
     const parsedResponse = await moviesData.json();
-    console.log("movie list", parsedResponse);
-
     return parsedResponse;
   }
 );
 
 export const fetchSearchText = createAsyncThunk(
   "movies/fetchSearchText",
-  async ({ searchText, page }) => {
-    console.log(searchText, page, "page");
+  async ({ searchText, page, type }) => {
     if (searchText == "") {
       const moviesData = await fetch(
-        `https://api.themoviedb.org/3/trending/all/day?api_key=${api_key}`
+        `${API_BASE_URL}/trending/${type}/day?api_key=${api_key}`
       );
       const parsedResponse = await moviesData.json();
       return parsedResponse;
     } else {
       const moviesData = await fetch(
-        `https://api.themoviedb.org/3/search/multi?api_key=${api_key}&language=en-US&query=${searchText}&page=${page}&include_adult=false`
+        `${API_BASE_URL}/search/multi?api_key=${api_key}&language=en-US&query=${searchText}&page=${page}`
       );
       const parsedResponse = await moviesData.json();
       return parsedResponse;
     }
-
-    // console.log("movie list", parsedResponse);
   }
 );
 
@@ -45,6 +37,7 @@ export const movieSlice = createSlice({
     isLoading: false,
     searchText: "",
     total_pages: 0,
+    type: "all",
     movieList: [],
     error: null,
   },
@@ -53,8 +46,10 @@ export const movieSlice = createSlice({
       state.searchText = action.payload;
     },
     clearList: (state) => {
-      console.log("clear");
       state.movieList = [];
+    },
+    changeType: (state, action) => {
+      state.type = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -65,7 +60,6 @@ export const movieSlice = createSlice({
       state.isLoading = false;
       state.movieList = [...state.movieList, ...action.payload.results];
       state.total_pages = action.payload.total_pages;
-      // state.page = action.payload.page;
     });
     builder.addCase(fetchContent.rejected, (state, action) => {
       state.isLoading = false;
@@ -79,8 +73,6 @@ export const movieSlice = createSlice({
       state.isLoading = false;
       state.movieList = [...state.movieList, ...action.payload.results];
       state.total_pages = action.payload.total_pages;
-
-      // state.page = action.payload.page;
     });
     builder.addCase(fetchSearchText.rejected, (state, action) => {
       state.isLoading = false;
@@ -89,6 +81,6 @@ export const movieSlice = createSlice({
   },
 });
 
-export const { handleSearchText, clearList } = movieSlice.actions;
+export const { handleSearchText, clearList, changeType } = movieSlice.actions;
 
 export default movieSlice.reducer;
