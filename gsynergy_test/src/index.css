@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @media screen and (max-width: 1120px) {
+@media screen and (max-width: 1120px) {
   .detail-container {
     font-size: small !important;
     overflow: hidden;
@@ -87,4 +87,4 @@
   .header-list span {
     display: none;
   }
-} */
+}
