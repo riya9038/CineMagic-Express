@@ -34,7 +34,7 @@ My app is ready to be deployed!
 -Routing using latest version of React Router DOM \
 -Added loading screens using Shimmer UI \
 -Handled errors using Error Components \
--Integrated React Testing Library for Unit Testing \
+-Integrated React Testing Library for Unit Testing 
 
 # Redux Toolkit
 
@@ -45,7 +45,7 @@ My app is ready to be deployed!
 -used createAsyncThunk from redux toolkit to handle async operations \
 -added actions inside reducers \
 -added cases for async operations states(pending, fulfilled, rejected) inside extraReducers \
--export actions and slices (important) \
+-export actions and slices (important) 
 
 # Infinite Scrolling
 
@@ -53,7 +53,7 @@ My app is ready to be deployed!
 -added the boilerplate code inside the component \
 -created corresponding next function that makes a next api call to fetch subsequent list of data \
 -added appropriate condition inside hasMore according to use case \
--infinite scroll is ready!! \
+-infinite scroll is ready!! 
 
 # Routing
 
@@ -61,26 +61,26 @@ My app is ready to be deployed!
 -destructured createBrowserRouter and RouteProvider from the library \
 -added paths and corresponding elements inside the createBrowserRoute array \
 -addded children and error elements \
--used Links to navigate between different screens \
+-used Links to navigate between different screens 
 
 # Debouncing
 
 -added setTimeout to dispatch action that fetches content based on search text \
 -added a delay of 500ms \
--cleared timeout(component unmounting) inside useEffect \
+-cleared timeout(component unmounting) inside useEffect 
 
 # Tailwind Css
 
 -npm install tailwindcss \
 -configured tailwind.config.js \
 -changed VS Code settings to read tailwind css \
--used tailwind intellisense extension for suggestions \
+-used tailwind intellisense extension for suggestions 
 
 # Unit Testing
 
 -npm install @testing-library/react and @testing-library/jest-dom \
 -added test cases inside App.test.js \
--npm run test to check \
+-npm run test to check 
 
 # Challenges
 
@@ -94,7 +94,7 @@ Given more time, I would have surely worked upon improving the UI with the combi
 
 -npm run build \
 -deployed the build folder on netlify \
--hosted link is ready!! \
+-hosted link is ready!! 
 
 # Hosted Url
 
