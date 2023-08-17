@@ -23,10 +23,16 @@ export const MovieContainer = () => {
     const nextPage = page + 1;
     if (searchText.length > 0) {
       dispatch(fetchSearchText({ searchText, page: nextPage }));
-      window.scrollTo({ top: 0, behavior: "smooth" });
     } else dispatch(fetchContent({ page: nextPage }));
     setPage(nextPage);
   };
+
+  useEffect(() => {
+    let timeoutId = setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 500);
+    return () => clearTimeout(timeoutId);
+  }, [searchText]);
 
   if (error) {
     console.error(error);
@@ -41,7 +47,7 @@ export const MovieContainer = () => {
       role="container"
     >
       <InfiniteScroll
-        className="h-full overflow-scroll flex flex-wrap gap-5 justify-center py-5 infinite-scroll-container "
+        className="h-full overflow-scroll flex flex-wrap gap-6 justify-start py-5 infinite-scroll-container "
         dataLength={movieList?.length}
         hasMore={page < total_pages}
         next={handleFetchMore}

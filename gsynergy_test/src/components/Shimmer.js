@@ -9,7 +9,7 @@ export const Shimmer = ({ parent }) => {
         <div
           data-testid="shimmer-item"
           key={index}
-          className="w-52 h-80 rounded-md bg-gray-400 flex flex-col items-center justify-center cursor-pointer shadow-md shadow-gray-600 p-2.5 animate-pulse"
+          className="w-52 h-80 rounded-md bg-gray-400 flex flex-col items-center justify-start cursor-pointer shadow-md shadow-gray-600 p-2.5 animate-pulse"
         ></div>
       ))}
     </div>

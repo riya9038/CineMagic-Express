@@ -26,7 +26,7 @@ export const MovieCard = ({ data }) => {
               {data?.original_title || data?.name}
             </p>
             <p className="m-0 text-xs mt-1 flex items-center w-1/5 justify-start bg-green-500 px-2">
-              <span>{Math.floor(data?.vote_average)}</span>
+              <span>{Math.floor(data?.vote_average) || "-"}</span>
               <GradeIcon className="scale-50" />
             </p>
           </div>
