@@ -5,35 +5,43 @@ import { fetchContent, fetchSearchText } from "../store/movieSlice";
 import { useDispatch, useSelector } from "react-redux";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { Shimmer } from "./Shimmer";
+import { ErrorScreen } from "./ErrorScreen";
 
 export const MovieContainer = () => {
-  const moviesList = useSelector((state) => state.movies.movieList);
-  const searchText = useSelector((state) => state.movies.searchText);
-  const total_pages = useSelector((state) => state.movies.total_pages);
-  const type = useSelector((state) => state.movies.type);
+  const { movieList, searchText, total_pages, error } = useSelector(
+    (state) => state.movies
+  );
 
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (searchText.length === 0) dispatch(fetchContent({ page, type: "all" }));
+    if (searchText.length === 0 && page == 1) dispatch(fetchContent({ page }));
   }, [dispatch, page]);
 
   const handleFetchMore = () => {
     const nextPage = page + 1;
     if (searchText.length > 0)
-      dispatch(fetchSearchText({ searchText, page: nextPage, type }));
-    else dispatch(fetchContent({ page: nextPage, type }));
+      dispatch(fetchSearchText({ searchText, page: nextPage }));
+    else dispatch(fetchContent({ page: nextPage }));
     setPage(nextPage);
   };
 
-  return moviesList?.length === 0 ? (
+  if (error) {
+    console.error(error);
+    return <ErrorScreen />;
+  }
+
+  return movieList?.length === 0 ? (
     <Shimmer parent="container" />
   ) : (
-    <div className="flex flex-wrap p-5 items-center bg-black" role="container">
+    <div
+      className="flex flex-wrap p-5 items-center bg-black h-5/6"
+      role="container"
+    >
       <InfiniteScroll
-        className="flex flex-wrap gap-8 justify-between infinite-scroll-container"
-        dataLength={moviesList.length}
+        className="h-full overflow-scroll flex flex-wrap gap-5 justify-center py-5 infinite-scroll-container "
+        dataLength={movieList?.length}
         hasMore={page < total_pages}
         next={handleFetchMore}
         endMessage={
@@ -43,7 +51,7 @@ export const MovieContainer = () => {
         }
         scrollThreshold={0.5}
       >
-        {moviesList.map((movie) => (
+        {movieList?.map((movie) => (
           <Link
             to={`/detail/${movie?.id}`}
             key={movie?.id}

@@ -1,6 +1,6 @@
 # Project Name
 
-Movie Central
+Cinemagic Express Hub
 
 # Available Scripts
 
@@ -83,10 +83,10 @@ npm install @testing-library/react and @testing-library/jest-dom
 Added test cases inside App.test.js
 npm run test to check
 
-Challenges
+# Challenges
 
-Implementing Infinite Scroll with Tailwind CSS was an incredibly engaging and enjoyable experience for me. It was a new concept that allowed me to delve into a new skillset. Despite having more straightforward choices like pagination and using libraries such as Mui or Bootstrap, I intentionally chose to tackle Infinite Scroll with Tailwind CSS in order to expand my knowledge.
+Implementing Infinite Scroll with Tailwind CSS was an incredibly engaging and enjoyable experience for me. It was a new concept that allowed me to delve into a new skillset. Despite having more straightforward choices like pagination and using libraries such as Mui or Bootstrap, I intentionally chose to tackle Infinite Scroll with Tailwind CSS in order to expand my knowledge. Learning is paramount!!.
 
-Throughout the implementation, I faced challenges and made continuous improvements to my approach. While the final UI might not be flawless, especially considering my status as a beginner, I'm proud of my efforts and the progress I've made. I consider this experience a significant achievement, showcasing my willingness to explore and learn new techniques in the world of web development.
+Throughout the implementation, I faced challenges and made continuous improvements to my approach. While the final UI might not be flawless, especially considering my status as a beginner with these libraries, I'm proud of my efforts and the progress I've made. I consider this experience a significant achievement, showcasing my willingness to explore and learn new techniques in the world of web development.
 
-Given more time, I would have surely worked upon improving the UI and add more advanced features like filter, authentication, animations to make it more functional.
+Given more time, I would have surely worked upon improving the UI with the combination of MUI and Tailwind Css and add more advanced features like filter, authentication, animations to make it more smooth and functional.

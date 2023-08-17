@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* --------------Media Queries--------------- */
+
+/* 
+.infinite-scroll-component {
+  height: 100% !important;
+  overflow: scroll !important;
+}
+.infinite-scroll-component::-webkit-scrollbar {
+  display: none;
+} */
+
 @media screen and (max-width: 1120px) {
   .detail-container {
     font-size: small !important;
@@ -35,13 +46,20 @@
   }
 }
 @media screen and (max-width: 750px) {
+  .header h2 {
+    font-size: 14px !important;
+    margin-bottom: 0px !important;
+  }
   .search-bar {
     width: 30%;
   }
   .header-list {
     font-size: 14px;
     margin-right: 0;
-    gap: 15px;
+    gap: 35px;
+  }
+  .header-list span {
+    display: none;
   }
   .infinite-scroll-container {
     gap: 55px;
@@ -60,6 +78,9 @@
   }
   .movie-info {
     display: flex;
+    justify-content: center;
+  }
+  .sub-info {
     justify-content: center;
   }
   .movie-genres {
@@ -83,8 +104,5 @@
     font-size: 14px;
     margin-right: 0;
     gap: 25px;
-  }
-  .header-list span {
-    display: none;
   }
 }

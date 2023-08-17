@@ -3,9 +3,9 @@ import { API_BASE_URL, api_key } from "../utils/constants";
 
 export const fetchContent = createAsyncThunk(
   "movies/fetchContent",
-  async ({ page, type }) => {
+  async ({ page }) => {
     const moviesData = await fetch(
-      `${API_BASE_URL}/trending/${type}/day?api_key=${api_key}&page=${page}`
+      `${API_BASE_URL}/trending/all/day?api_key=${api_key}&sort_by=release_date.desc&page=${page}`
     );
     const parsedResponse = await moviesData.json();
     return parsedResponse;
@@ -14,10 +14,10 @@ export const fetchContent = createAsyncThunk(
 
 export const fetchSearchText = createAsyncThunk(
   "movies/fetchSearchText",
-  async ({ searchText, page, type }) => {
+  async ({ searchText, page }) => {
     if (searchText == "") {
       const moviesData = await fetch(
-        `${API_BASE_URL}/trending/${type}/day?api_key=${api_key}`
+        `${API_BASE_URL}/trending/all/day?api_key=${api_key}`
       );
       const parsedResponse = await moviesData.json();
       return parsedResponse;
@@ -37,8 +37,8 @@ export const movieSlice = createSlice({
     isLoading: false,
     searchText: "",
     total_pages: 0,
-    type: "all",
     pageNumber: 0,
+    tvPageNumber: 0,
     movieList: [],
     error: null,
   },
@@ -48,9 +48,6 @@ export const movieSlice = createSlice({
     },
     clearList: (state) => {
       state.movieList = [];
-    },
-    changeType: (state, action) => {
-      state.type = action.payload;
     },
     changePageNumber: (state, action) => {
       state.pageNumber = action.payload;
@@ -88,7 +85,7 @@ export const movieSlice = createSlice({
   },
 });
 
-export const { handleSearchText, clearList, changeType, changePageNumber } =
+export const { handleSearchText, clearList, changePageNumber } =
   movieSlice.actions;
 
 export default movieSlice.reducer;
