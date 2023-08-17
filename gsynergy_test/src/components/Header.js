@@ -36,7 +36,7 @@ export const Header = () => {
           <div className="logo w-16 h-16 flex items-center shadow-4xl shadow-slate-800">
             <img
               className="w-full h-full"
-              src="https://img.freepik.com/free-vector/flat-clapperboard-icon_1063-38.jpg"
+              src="https://cdn-icons-png.flaticon.com/512/4221/4221419.png"
             />
           </div>
           <h2 className="text-2xl font-mono m-0 font-semibold first-letter:text-4xl">

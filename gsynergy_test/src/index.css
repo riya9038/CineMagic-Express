@@ -4,15 +4,6 @@
 
 /* --------------Media Queries--------------- */
 
-/* 
-.infinite-scroll-component {
-  height: 100% !important;
-  overflow: scroll !important;
-}
-.infinite-scroll-component::-webkit-scrollbar {
-  display: none;
-} */
-
 @media screen and (max-width: 1120px) {
   .detail-container {
     font-size: small !important;
@@ -82,6 +73,9 @@
   }
   .sub-info {
     justify-content: center;
+  }
+  .sub-info div {
+    width: 50%;
   }
   .movie-genres {
     justify-content: center;

@@ -20,7 +20,6 @@ export const MovieDetailsCard = ({ movie }) => {
   const companies = movie?.production_companies
     ?.map((company) => company.name)
     .join(", ");
-  console.log(companies, "comp");
 
   return movie?.success == false ? (
     <ErrorScreen />

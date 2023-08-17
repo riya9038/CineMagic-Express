@@ -38,7 +38,6 @@ export const movieSlice = createSlice({
     searchText: "",
     total_pages: 0,
     pageNumber: 0,
-    tvPageNumber: 0,
     movieList: [],
     error: null,
   },
